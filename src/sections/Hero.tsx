@@ -10,9 +10,9 @@ const Hero = () => {
     >
       <Container className="text-center">
         <motion.h1
-          initial={{ opacity: 0, y: 40, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-4xl md:text-6xl font-bold leading-tight tracking-tight max-w-4xl mx-auto"
         >
           More than productivity. <br className="hidden sm:block" />
