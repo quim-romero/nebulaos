@@ -16,3 +16,11 @@ body {
   background-color: #16161a;
   color: #fffffe;
 }
+
+.text-muted {
+  color: #a1a1aa;
+}
+.dark .text-muted {
+  color: #a1a1aa;
+  opacity: 0.8;
+}
