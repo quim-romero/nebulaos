@@ -36,7 +36,7 @@ const WhatIs = () => {
   return (
     <section
       id="what"
-      className="py-24 bg-white text-dark dark:bg-dark dark:text-light transition-colors duration-300"
+      className="py-24 bg-white text-dark dark:bg-dark dark:text-light transition-colors duration-300 border-t border-muted/10"
     >
       <Container>
         <motion.h2
@@ -49,7 +49,7 @@ const WhatIs = () => {
           What is <span className="text-primary">NebulaOS</span>?
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12 justify-center max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 justify-center max-w-4xl mx-auto px-4 sm:px-0">
           {features.map((feature, index) => (
             <motion.div
               key={index}
