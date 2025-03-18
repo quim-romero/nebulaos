@@ -25,7 +25,8 @@ const CTA = () => {
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="inline-block backdrop-blur-md bg-white/20 dark:bg-white/5
-                     border border-white/30 dark:border-white/10 rounded-xl px-8 py-4 transition-all duration-300"
+                     border border-white/30 dark:border-white/10 rounded-xl px-8 py-4 transition-all duration-300
+                     hover:brightness-110 border-muted/20"
         >
           <Button onClick={() => setOpen(true)}>Join NebulaOS</Button>
         </motion.div>
@@ -34,7 +35,7 @@ const CTA = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/60 dark:bg-black/70 flex items-center justify-center backdrop-blur"
+            className="fixed inset-0 z-50 bg-black/60 dark:bg-black/70 flex items-center justify-center backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -42,7 +43,7 @@ const CTA = () => {
             <motion.div
               className="bg-white dark:bg-[#111] p-8 rounded-xl max-w-sm text-center relative border border-muted/20
                          text-dark dark:text-light transition-colors"
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
