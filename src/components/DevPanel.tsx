@@ -26,7 +26,7 @@ const DevPanel = ({ show, onClose }: DevPanelProps) => {
           onClick={onClose}
         >
           <motion.div
-            className="bg-white dark:bg-dark text-dark dark:text-light p-8 rounded-xl border border-muted/20 max-w-md w-full shadow-xl"
+            className="bg-white dark:bg-dark text-dark dark:text-light p-8 rounded-xl border border-muted/20 max-w-md w-full shadow-xl transition-colors" /* mejora: transición visual para tema */
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
