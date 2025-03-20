@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import ThemeToggle from './components/ThemeToggle'
 import Header from './components/Header'
+import DevPanel from './components/DevPanel'
+import Footer from './components/Footer'
+import Demo from './sections/Demo'
+
 import Hero from './sections/Hero'
 import Features from './sections/Features'
 import WhatIs from './sections/WhatIs'
 import Testimonials from './sections/Testimonials'
 import CTA from './sections/CTA'
-import DevPanel from './components/DevPanel'
-import Footer from './components/Footer'
 
 function App() {
   const [showDevPanel, setShowDevPanel] = useState(false)
@@ -31,6 +33,7 @@ function App() {
       <WhatIs />
       <Features />
       <Testimonials />
+      <Demo />
       <CTA />
       <DevPanel show={showDevPanel} onClose={() => setShowDevPanel(false)} />
       <ThemeToggle />
