@@ -7,6 +7,7 @@ import WhatIs from './sections/WhatIs'
 import Testimonials from './sections/Testimonials'
 import CTA from './sections/CTA'
 import DevPanel from './components/DevPanel'
+import Footer from './components/Footer'
 
 function App() {
   const [showDevPanel, setShowDevPanel] = useState(false)
@@ -33,6 +34,7 @@ function App() {
       <CTA />
       <DevPanel show={showDevPanel} onClose={() => setShowDevPanel(false)} />
       <ThemeToggle />
+      <Footer />
     </>
   )
 }
