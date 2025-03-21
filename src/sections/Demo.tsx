@@ -7,11 +7,11 @@ const Demo = () => {
   const [isModalOpen, setModalOpen] = useState(false)
   const [consoleOutput, setConsoleOutput] = useState('>>> Ready.')
 
-  const handleRunCommand = () => {
-    setConsoleOutput('>>> Running command...')
+  const handleCommand = () => {
+    setConsoleOutput('>>> Launching productivity core...')
     setTimeout(() => {
-      setConsoleOutput('>>> Running command...\n>>> Done.')
-    }, 1000)
+      setConsoleOutput('>>> Nebula AI response: "Focus mode activated."')
+    }, 1500)
   }
 
   return (
@@ -37,7 +37,7 @@ const Demo = () => {
               {consoleOutput}
             </div>
 
-            <Button className="mt-4" onClick={handleRunCommand}>
+            <Button className="mt-4" onClick={handleCommand}>
               Run Command
             </Button>
           </div>
