@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react' // 🔧 añadido useRef, useEffect
 import { motion, AnimatePresence } from 'framer-motion'
+import { gsap } from 'gsap' // 🔧 añadido gsap
 import Container from '../components/Container'
 import Button from '../components/Button'
 
 const Demo = () => {
   const [isModalOpen, setModalOpen] = useState(false)
   const [consoleOutput, setConsoleOutput] = useState('>>> Ready.')
+
+  const ctaRef = useRef<HTMLButtonElement>(null) // 📄 nueva referencia CTA
 
   const handleCommand = () => {
     setConsoleOutput('>>> Launching productivity core...')
@@ -48,7 +51,9 @@ const Demo = () => {
               Curious about NebulaOS’s AI core? Click below to open the system
               panel.
             </p>
-            <Button onClick={() => setModalOpen(true)}>Open Modal</Button>
+            <Button ref={ctaRef} onClick={() => setModalOpen(true)}>
+              Open Modal
+            </Button>
           </div>
         </div>
       </Container>
