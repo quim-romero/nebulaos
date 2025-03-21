@@ -104,19 +104,30 @@ const Demo = () => {
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            key="modal"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 30 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+            className="fixed inset-0 bg-black/60 dark:bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div className="bg-white dark:bg-dark rounded-xl p-6 shadow-lg max-w-md w-full">
-              <h4 className="text-lg font-semibold mb-2">System Panel</h4>
-              <p className="text-sm mb-4 text-muted dark:text-muted/80">
-                This is where NebulaOS AI core details would go.
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-[#111] p-8 rounded-xl max-w-md text-left text-dark dark:text-light border border-muted/20 transition-colors"
+            >
+              <button
+                onClick={() => setModalOpen(false)}
+                className="absolute top-3 right-3 text-muted hover:text-light"
+              >
+                ×
+              </button>
+              <h4 className="text-xl font-bold mb-4">NebulaOS AI Core</h4>
+              <p className="text-sm text-muted dark:text-muted/80">
+                The AI Core is designed to anticipate actions, reduce friction,
+                and enhance creative flow by learning your patterns and habits.
               </p>
-              <Button onClick={() => setModalOpen(false)}>Close</Button>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
