@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react' // 🔧 añadido useRef, useEffect
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { gsap } from 'gsap' // 🔧 añadido gsap
+import { gsap } from 'gsap'
 import Container from '../components/Container'
 import Button from '../components/Button'
 
@@ -8,7 +8,50 @@ const Demo = () => {
   const [isModalOpen, setModalOpen] = useState(false)
   const [consoleOutput, setConsoleOutput] = useState('>>> Ready.')
 
-  const ctaRef = useRef<HTMLButtonElement>(null) // 📄 nueva referencia CTA
+  const ctaRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1, ease: 'power2.inOut' })
+
+    if (ctaRef.current) {
+      tl.to(ctaRef.current, {
+        boxShadow: `
+          0 0 12px #5EEAD4,
+          0 0 24px #5EEAD4,
+          0 0 48px #5EEAD4
+        `,
+        scale: 1.05,
+        duration: 0.2,
+      })
+        .to(ctaRef.current, {
+          boxShadow: `
+            0 0 6px #5EEAD4,
+            0 0 12px #5EEAD4,
+            0 0 24px #5EEAD4
+          `,
+          scale: 1,
+          duration: 0.2,
+        })
+        .to(ctaRef.current, {
+          boxShadow: `
+            0 0 16px #5EEAD4,
+            0 0 32px #5EEAD4,
+            0 0 64px #5EEAD4
+          `,
+          scale: 1.07,
+          duration: 0.2,
+        })
+        .to(ctaRef.current, {
+          boxShadow: '0 0 0px transparent',
+          scale: 1,
+          duration: 0.4,
+        })
+    }
+
+    return () => {
+      tl.kill()
+    }
+  }, [])
 
   const handleCommand = () => {
     setConsoleOutput('>>> Launching productivity core...')
