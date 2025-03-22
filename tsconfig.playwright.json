@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ESNext",
+    "types": ["node", "playwright"]
+  },
+  "include": ["playwright.config.ts"]
+}
