@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "test:e2e": "npm run e2e"
   },
   "dependencies": {
     "clsx": "^2.1.1",
