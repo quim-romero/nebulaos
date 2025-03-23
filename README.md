@@ -1,69 +1,112 @@
-# React + TypeScript + Vite
+# NebulaOS — Futuristic Productivity Microsite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![E2E Tests](https://github.com/quim-romero/nebulaos/actions/workflows/e2e.yml/badge.svg)
 
-Currently, two official plugins are available:
+> _More than productivity. Absolute control. An interface with intelligence and soul._
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧭 About NebulaOS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**NebulaOS** is an **interactive landing page** designed to launch a fictional product that redefines modern productivity. Built as a portfolio project, it blends advanced animation, modular components, and an immersive thematic experience.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Focused on visual fluidity, intelligent control, and total adaptability:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- ⚙️ Modular React/Vite architecture with hidden DevPanel
+- 🌙 Dark/light mode with persistent user preference
+- ✨ Animated transitions using Framer Motion + GSAP
+- 🧠 Simulated interactive console and modal panels
+- 📐 Fully responsive and performance-optimized layout
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Live Preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+👉 [https://nebulaos.quimromero.com/](https://nebulaos.quimromero.com/)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ✨ Features
+
+- 🌓 Dark/light theme toggle (auto-detects system preference)
+- 🔐 Privacy-first and secure architecture
+- ⚡ Simulated instant commands via a "console"
+- 🧩 Modular drag & drop-based (fictional) component UI
+- 🛠️ Hidden Dev Mode (`Ctrl + Shift + D`) with technical info
+- 🗣️ Dynamic testimonials for storytelling
+- 🧪 Automated E2E testing via GitHub Actions
+
+---
+
+## 🧠 Tech Stack
+
+| Tech                                      | Role                                   |
+| ----------------------------------------- | -------------------------------------- |
+| **React + Vite**                          | Framework and bundler                  |
+| **Framer Motion + GSAP**                  | Advanced animations                    |
+| **Tailwind CSS**                          | Utility-first styling                  |
+| **Vitest + Testing Library + Playwright** | Full-spectrum testing                  |
+| **React Helmet**                          | Dynamic SEO and metadata               |
+| **GitHub Actions**                        | Continuous integration for E2E testing |
+
+---
+
+## 🗂 Project Structure
+
+- `src/`
+  - `components/` – Buttons, Theme Toggle, Dev Panel, etc.
+  - `sections/` – Hero, About, Features, Demo, Testimonials, CTA
+  - `context/` – Global theme context
+  - `styles/` – Tailwind global styles
+  - `test/` – Test setup
+- `public/` – Avatars, icons, and assets
+
+---
+
+## 🧪 End-to-End Testing
+
+NebulaOS uses **Vitest** for unit testing and **GitHub Actions** for automated testing on push/PR.
+
+Currently covered:
+
+- ✅ App renders without errors
+- ✅ Snapshot test for `Button`
+- ✅ CI setup for E2E testing
+
+Coming soon:
+
+- 🧪 Interaction tests for console and modal
+- 🌙 Theme persistence tests
+- 🔍 Accessibility validation for navigation
+
+🧪 [View CI status →](https://github.com/quim-romero/nebulaos/actions)
+
+---
+
+## 📸 Screenshots
+
+| Hero                            | Features                                | Demo                            |
+| ------------------------------- | --------------------------------------- | ------------------------------- |
+| ![Hero](./screenshots/hero.png) | ![Features](./screenshots/features.png) | ![Demo](./screenshots/demo.png) |
+
+---
+
+## 🧩 Notes
+
+- ✨ 100% handcrafted UI — no templates used
+- 🔍 Inspired by emotional, clear, and modern design
+- 🧪 Perfect to showcase advanced frontend interaction skills
+
+---
+
+## 📬 Contact
+
+Looking for a frontend developer with visual sensitivity and technical precision?
+
+- 📧 quim@quimromero.com
+- 🌐 [https://www.quimromero.com/](https://www.quimromero.com/)
+
+---
+
+> _NebulaOS transforms the idea of productivity into a living experience —  
+> where design, interaction, and code flow together._
