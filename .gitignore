@@ -1,5 +1,5 @@
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,18 +7,53 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies and build outputs
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# Build/bundler caches
+.vite/
+.vite_deps/
+node_modules/.vite/
+.cache/
+
+# Playwright (e2e testing)
+playwright-report/
+blob-report/
+playwright/.cache/
+test-results/
+screenshots/
+traces/
+
+# Vitest / coverage reports
+coverage/
+.vitest/
+
+# TypeScript
+*.tsbuildinfo
+
+# Lint/format
+.eslintcache
+
+# Environment variables (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment platforms
+.vercel/
+.netlify/
