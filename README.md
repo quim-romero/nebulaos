@@ -1,6 +1,6 @@
 # NebulaOS — Futuristic Productivity Microsite
 
-![E2E Tests](https://github.com/quim-romero/nebulaos/actions/workflows/e2e.yml/badge.svg)
+![E2E Tests](https://github.com/quim-romero/nebulaos/actions/workflows/ci.yml/badge.svg)
 
 > _More than productivity. Absolute control. An interface with intelligence and soul._
 
