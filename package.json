@@ -10,7 +10,13 @@
     "preview": "vite preview",
     "test": "vitest",
     "e2e": "playwright test",
-    "test:e2e": "npm run e2e"
+    "test:e2e": "npm run e2e",
+    "smoke": "playwright test tests/smoke.home.spec.ts",
+    "a11y:e2e": "playwright test tests/a11y.home.spec.ts",
+    "a11y:unit": "vitest run src/**/__tests__/*.a11y.test.tsx",
+    "lhci:collect": "lhci collect",
+    "lhci:assert": "lhci assert",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "clsx": "^2.1.1",
