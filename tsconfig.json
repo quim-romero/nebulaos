@@ -1,8 +1,8 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.playwright.json" }
-  ]
+  "compilerOptions": {
+    "types": ["vitest/globals", "vite/client", "node"],
+    "jsx": "react-jsx",
+    "strict": true
+  },
+  "include": ["src", "tests", "vitest.config.ts"]
 }
