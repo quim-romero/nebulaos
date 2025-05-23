@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
-import { beforeEach, vi } from 'vitest'
-import { toHaveNoViolations } from 'jest-axe'
+import { beforeEach, vi, expect } from 'vitest'
+import { toHaveNoViolations } from 'vitest-axe'
 
 beforeEach(() => {
   document.documentElement.className = ''
