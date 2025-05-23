@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
 import { beforeEach, vi } from 'vitest'
+import { toHaveNoViolations } from 'jest-axe'
 
 beforeEach(() => {
   document.documentElement.className = ''
@@ -19,3 +20,5 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: vi.fn(),
   }),
 })
+
+expect.extend(toHaveNoViolations)
