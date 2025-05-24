@@ -19,30 +19,33 @@ dist-ssr/
 node_modules/.vite/
 .cache/
 
-# Playwright (e2e testing)
+# Playwright (E2E testing)
 playwright-report/
 blob-report/
-playwright/.cache/
 test-results/
 screenshots/
 traces/
+playwright/.cache/
+playwright/.auth/
+.playwright/
 
 # Vitest / coverage reports
 coverage/
 .vitest/
+*.lcov
 
 # TypeScript
 *.tsbuildinfo
 
-# Lint/format
+# Lint / format
 .eslintcache
 
-# Environment variables (keep .env.example)
+# Env files (keep .env.example)
 .env
 .env.*
 !.env.example
 
-# Editor and OS files
+# Editor & OS
 .vscode/*
 !.vscode/extensions.json
 .idea/
@@ -53,7 +56,12 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+*.orig
 
 # Deployment platforms
 .vercel/
 .netlify/
+
+# (Opcional) Lighthouse CI
+.lighthouseci/
+/lhci

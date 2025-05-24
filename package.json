@@ -8,15 +8,16 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest",
-    "e2e": "playwright test",
-    "test:e2e": "npm run e2e",
+    "preview:ci": "vite preview --port=4173 --strictPort",
+    "test:unit": "vitest run",
+    "a11y:unit": "vitest run src/**/__tests__/*.a11y.test.tsx",
     "smoke": "playwright test tests/smoke.home.spec.ts",
     "a11y:e2e": "playwright test tests/a11y.home.spec.ts",
-    "a11y:unit": "vitest run src/**/__tests__/*.a11y.test.tsx",
+    "e2e:all": "start-server-and-test \"npm:preview:ci\" http://localhost:4173 \"playwright test tests/smoke.home.spec.ts tests/a11y.home.spec.ts --base-url=http://localhost:4173\"",
     "lhci:collect": "lhci collect",
     "lhci:assert": "lhci assert",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun",
+    "test:all": "npm run test:unit && npm run a11y:unit && npm run build && npm run e2e:all && npm run lhci"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -50,11 +51,13 @@
     "lighthouse": "^12.8.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "start-server-and-test": "^2.0.13",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
     "vitest": "^3.2.4",
-    "vitest-axe": "^0.1.0"
+    "vitest-axe": "^0.1.0",
+    "wait-on": "^8.0.4"
   }
 }
