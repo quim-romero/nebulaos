@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom'
-import { beforeEach, vi, expect } from 'vitest'
-import { toHaveNoViolations } from 'vitest-axe'
+import '@testing-library/jest-dom/vitest'
+import { beforeEach, vi } from 'vitest'
+import 'vitest-axe/extend-expect'
 
 beforeEach(() => {
   document.documentElement.className = ''
@@ -9,16 +9,15 @@ beforeEach(() => {
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: (query: string) => ({
-    matches: query.includes('dark'),
-    media: query,
-    onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  }),
+  value: (query: string): MediaQueryList => {
+    const mql = {
+      matches: query.includes('dark'),
+      media: query,
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    } as unknown as MediaQueryList
+    return mql
+  },
 })
-
-expect.extend(toHaveNoViolations)

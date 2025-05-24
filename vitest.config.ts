@@ -8,9 +8,5 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/setupTests.ts',
     css: true,
-    include: [
-      'src/**/*.{test,spec}.?(c|m)[jt]s?(x)',
-      'tests/**/*.(spec|test).ts?(x)',
-    ],
   },
 })
