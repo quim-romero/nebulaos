@@ -40,7 +40,7 @@ coverage/
 # Lint / format
 .eslintcache
 
-# Env files (keep .env.example)
+# Env files
 .env
 .env.*
 !.env.example
@@ -62,6 +62,6 @@ Thumbs.db
 .vercel/
 .netlify/
 
-# (Opcional) Lighthouse CI
+# Lighthouse CI
 .lighthouseci/
 /lhci

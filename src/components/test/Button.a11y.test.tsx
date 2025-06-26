@@ -3,10 +3,12 @@ import { render } from '@testing-library/react'
 import { axe } from 'vitest-axe'
 import Button from '../Button'
 
-describe('Button a11y', () => {
-  it('has no accessibility violations', async () => {
+describe('Button a11y (unit)', () => {
+  it('has no obvious violations in jsdom subset', async () => {
     const { container } = render(<Button>Click me</Button>)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
+    const results = await axe(container, {
+      rules: { 'color-contrast': { enabled: false } },
+    })
+    expect(results.violations).toEqual([])
   })
 })

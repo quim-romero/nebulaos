@@ -79,7 +79,7 @@ const Demo = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="bg-white dark:bg-dark border border-muted/20 rounded-xl p-6 shadow-inner transition-colors">
             <h3 className="text-lg font-semibold mb-4">NebulaOS Console</h3>
-            <div className="bg-gray-100 dark:bg-black text-green-600 dark:text-green-400 font-mono p-4 rounded h-32 text-sm transition-colors border border-muted/20 whitespace-pre-line">
+            <div className="bg-gray-50 dark:bg-black text-green-700 dark:text-green-400 font-mono p-4 rounded h-32 text-sm transition-colors border border-muted/20 whitespace-pre-line">
               {consoleOutput}
             </div>
 

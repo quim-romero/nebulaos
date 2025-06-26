@@ -33,8 +33,8 @@ const Features = () => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setMounted(true), 50)
-    return () => clearTimeout(timeout)
+    const t = setTimeout(() => setMounted(true), 50)
+    return () => clearTimeout(t)
   }, [])
 
   return (
@@ -51,14 +51,22 @@ const Features = () => {
           {features.map((f, i) => (
             <div
               key={i}
-              className={`p-6 border border-muted/20 rounded-xl hover:shadow-xl hover:border-primary transition-all
-                         bg-white text-dark dark:bg-[#1d1d22] dark:text-light opacity-0 transform transition-opacity duration-700
-                         ${mounted ? 'opacity-100' : ''}`}
+              className={[
+                'p-6 border border-muted/20 rounded-xl hover:shadow-xl hover:border-primary transition-all',
+                'bg-white text-dark dark:bg-[#1d1d22] dark:text-light',
+                'transform-gpu transition-transform duration-700 motion-reduce:transition-none',
+                mounted ? 'translate-y-0' : 'translate-y-3',
+                'motion-reduce:translate-y-0',
+              ].join(' ')}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="text-primary mb-4">{f.icon}</div>
+              <div className="text-primary mb-4" aria-hidden="true">
+                {f.icon}
+              </div>
               <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
-              <p className="text-muted dark:text-muted/80">{f.description}</p>
+              <p className="text-gray-700 dark:text-gray-300">
+                {f.description}
+              </p>
             </div>
           ))}
         </div>

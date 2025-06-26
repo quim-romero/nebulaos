@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --------- Theme Variables --------- */
+:root {
+  --color-primary: 15 118 110;
+}
+
+.dark {
+  --color-primary: 45 212 191;
+}
+
+/* --------- Typography --------- */
 html {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
@@ -11,24 +21,31 @@ body {
   background-color: #fffffe;
   color: #16161a;
 }
-
 .dark body {
   background-color: #16161a;
   color: #fffffe;
 }
 
+/* --------- Accessibility --------- */
 .text-muted {
-  color: #a1a1aa;
+  color: rgb(75 85 99);
 }
 .dark .text-muted {
-  color: #a1a1aa;
-  opacity: 0.8;
+  color: rgb(156 163 175);
 }
 
+/* --------- Hidden Scrollbar --------- */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* --------- Map 'text-primary' --------- */
+@layer utilities {
+  .text-primary {
+    color: rgb(var(--color-primary));
+  }
 }

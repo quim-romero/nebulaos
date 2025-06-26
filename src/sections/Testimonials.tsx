@@ -42,7 +42,12 @@ const Testimonials = () => {
           What people <span className="text-primary">say</span>
         </motion.h2>
 
-        <div className="overflow-x-auto hide-scrollbar">
+        <div
+          className="overflow-x-auto hide-scrollbar"
+          tabIndex={0}
+          role="region"
+          aria-label="Feature gallery"
+        >
           <div className="flex justify-center gap-6 md:gap-10 min-w-full max-w-6xl mx-auto px-2">
             {testimonials.map((t, i) => (
               <motion.div

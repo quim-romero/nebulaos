@@ -17,7 +17,6 @@ const config: Config = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
-
       container: {
         center: true,
         padding: '1.5rem',

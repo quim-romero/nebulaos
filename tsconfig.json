@@ -1,8 +1,26 @@
 {
   "compilerOptions": {
-    "types": ["vitest/globals", "vite/client", "node"],
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "strict": true
+    "noEmit": true,
+
+    "strict": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    "types": ["vitest/globals", "vite/client", "node"]
   },
-  "include": ["src", "tests", "vitest.config.ts"]
+  "include": [
+    "src",
+    "tests",
+    "vite.config.*",
+    "vitest.config.*",
+    "playwright.config.*"
+  ],
+  "exclude": ["dist", "node_modules"]
 }

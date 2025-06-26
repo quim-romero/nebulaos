@@ -16,7 +16,7 @@ const Header = () => {
           className="text-xl font-bold tracking-wide text-gray-900 dark:text-gray-100"
         >
           <span>Nebula</span>
-          <span className="text-primary">OS</span>
+          <span className="text-teal-700 dark:text-teal-300">OS</span>
         </a>
 
         <nav className="hidden md:flex space-x-6 text-sm font-medium">

@@ -8,5 +8,14 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/setupTests.ts',
     css: true,
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      '**/.{idea,git,cache,output,temp}/**',
+      '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,tsup,build,eslint,prettier}.config.*',
+      'tests/**',
+      'playwright.config.*',
+    ],
   },
 })
