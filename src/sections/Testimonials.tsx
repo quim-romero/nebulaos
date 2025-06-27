@@ -33,7 +33,7 @@ const Testimonials = () => {
     >
       <Container>
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -46,22 +46,23 @@ const Testimonials = () => {
           className="overflow-x-auto hide-scrollbar"
           tabIndex={0}
           role="region"
-          aria-label="Feature gallery"
+          aria-label="Testimonials carousel"
         >
           <div className="flex justify-center gap-6 md:gap-10 min-w-full max-w-6xl mx-auto px-2">
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
                 viewport={{ once: true }}
                 className="bg-white dark:bg-[#1d1d22] rounded-xl p-6 w-80 shrink-0 border border-muted/20
                            text-dark dark:text-light transition-colors duration-300 flex flex-col"
               >
-                <p className="text-sm text-muted dark:text-muted/80 mb-4 flex-grow">
-                  "{t.quote}"
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+                  <q>{t.quote}</q>
                 </p>
+
                 <div className="flex items-center gap-4 mt-auto">
                   <img
                     src={t.avatar}
@@ -70,7 +71,7 @@ const Testimonials = () => {
                   />
                   <div>
                     <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs text-muted dark:text-muted/60">
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
                       {t.role}
                     </p>
                   </div>
