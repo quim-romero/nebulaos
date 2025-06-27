@@ -8,17 +8,13 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:e2e": "npm run e2e:all",
     "preview:ci": "vite preview --port=4173 --strictPort",
     "test:unit": "vitest run",
-    "a11y:unit": "vitest run src/components/test/Button.a11y.test.tsx",
+    "a11y:unit": "vitest run \"/\\.a11y\\.(test|spec)\\.tsx$/\"",
+    "test:e2e": "playwright test",
     "smoke": "playwright test tests/smoke.home.spec.ts",
     "a11y:e2e": "playwright test tests/a11y.home.spec.ts",
-    "e2e:all": "playwright test tests/smoke.home.spec.ts tests/a11y.home.spec.ts",
-    "lhci:collect": "lhci collect",
-    "lhci:assert": "lhci assert",
-    "lhci": "lhci autorun",
-    "test:all": "npm run test:unit && npm run a11y:unit && npm run build && npm run e2e:all && npm run lhci"
+    "lhci:fs": "lhci autorun --upload.target=filesystem --upload.outputDir=./lhci"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -57,6 +53,7 @@
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
     "vitest": "^3.2.4",
-    "vitest-axe": "^0.1.0"
+    "vitest-axe": "^0.1.0",
+    "wait-on": "^8.0.4"
   }
 }
