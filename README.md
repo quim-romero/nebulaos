@@ -103,9 +103,6 @@ NebulaOS uses **Playwright** for E2E and **Vitest** for unit tests. CI runs on e
 **Run locally (essentials)**
 
 ```bash
-# Dev
-npm run dev
-
 # Unit tests
 npm run test:unit
 
