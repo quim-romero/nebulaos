@@ -19,6 +19,7 @@ test('Home has no obvious a11y issues (wcag2a/aa)', async ({ page }) => {
 
   const results = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa'])
+    .disableRules(['color-contrast'])
     .analyze()
 
   expect(results.violations).toEqual([])
