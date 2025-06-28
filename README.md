@@ -8,78 +8,120 @@
 
 ## 🧭 About NebulaOS
 
-**NebulaOS** is an **interactive landing page** designed to launch a fictional product that redefines modern productivity. Built as a portfolio project, it blends advanced animation, modular components, and an immersive thematic experience.
+**NebulaOS** is a **high-impact landing experience** for a fictional productivity OS — built as a portfolio piece to showcase motion, polish, and thoughtful UI systems.
 
-Focused on visual fluidity, intelligent control, and total adaptability:
+Made for fluid visuals, intelligent control, and total adaptability:
 
-- ⚙️ Modular React/Vite architecture with hidden DevPanel
-- 🌙 Dark/light mode with persistent user preference
-- ✨ Animated transitions using Framer Motion + GSAP
-- 🧠 Simulated interactive console and modal panels
-- 📐 Fully responsive and performance-optimized layout
+- ✨ Framer Motion + GSAP choreography across sections
+- ⚙️ Modular React/Vite architecture with a hidden **Dev Panel** (`Ctrl + Shift + D`)
+- 🌗 Theme with system detection, local persistence, and reduced-motion support
+- 🧪 Unit + E2E + a11y checks in CI (Vitest + Playwright + axe)
+- ⚡ Performance budgets via Lighthouse CI (LHCI)
 
 ---
 
 ## 🚀 Live Preview
 
-👉 [https://nebulaos.quimromero.com/](https://nebulaos.quimromero.com/)
+👉 https://nebulaos.quimromero.com/
 
 ---
 
 ## ✨ Features
 
-- 🌓 Dark/light theme toggle (auto-detects system preference)
-- 🔐 Privacy-first and secure architecture
-- ⚡ Simulated instant commands via a "console"
-- 🧩 Modular drag & drop-based (fictional) component UI
-- 🛠️ Hidden Dev Mode (`Ctrl + Shift + D`) with technical info
-- 🗣️ Dynamic testimonials for storytelling
-- 🧪 Automated E2E testing via GitHub Actions
+- 🌓 **Light/Dark mode** with system preference + local persistence
+- 🌀 **Respect reduced motion** for accessible animations
+- ⚡ **Interactive console demo** with simulated AI responses and modal panel
+- 🧩 **Modular UI** (fictional) with stackable components
+- 🛠️ **Hidden Dev Mode** for tech details (`Ctrl + Shift + D`)
+- 🗣️ **Testimonials carousel** for narrative tone
+- ♿ **A11y-first details** (landmarks, ARIA on controls like Theme Toggle)
+- 🧪 **Automated tests**: unit, E2E, and accessibility baked into CI
 
 ---
 
 ## 🧠 Tech Stack
 
-| Tech                                      | Role                                   |
-| ----------------------------------------- | -------------------------------------- |
-| **React + Vite**                          | Framework and bundler                  |
-| **Framer Motion + GSAP**                  | Advanced animations                    |
-| **Tailwind CSS**                          | Utility-first styling                  |
-| **Vitest + Testing Library + Playwright** | Full-spectrum testing                  |
-| **React Helmet**                          | Dynamic SEO and metadata               |
-| **GitHub Actions**                        | Continuous integration for E2E testing |
+| Tech                          | Role                              |
+| ----------------------------- | --------------------------------- |
+| **React + TypeScript + Vite** | Core app framework / bundler      |
+| **Tailwind CSS**              | Design system & theming           |
+| **Framer Motion + GSAP**      | Motion + micro-interactions       |
+| **Vitest + Testing Library**  | Unit testing                      |
+| **Playwright**                | E2E testing                       |
+| **axe-core + vitest-axe**     | Accessibility checks (unit & E2E) |
+| **ESLint + Prettier**         | Linting & formatting              |
+| **Lighthouse CI (LHCI)**      | Performance & a11y budgets in CI  |
 
 ---
 
 ## 🗂 Project Structure
 
 - `src/`
-  - `components/` – Buttons, Theme Toggle, Dev Panel, etc.
-  - `sections/` – Hero, About, Features, Demo, Testimonials, CTA
-  - `context/` – Global theme context
-  - `styles/` – Tailwind global styles
-  - `test/` – Test setup
-- `public/` – Avatars, icons, and assets
+  - `components/` – Button, ThemeToggle, Header, Footer, DevPanel, Container
+  - `sections/` – **Hero**, **WhatIs**, **Features**, **Demo**, **Testimonials**, **CTA**
+  - `context/` – Theme context (persisted, system-aware)
+  - `styles/` – Tailwind base and utilities
+  - `tests/` – E2E specs (Playwright) + a11y helpers
+- `public/` – Meta, icons, avatars, screenshots
 
 ---
 
 ## 🧪 End-to-End Testing
 
-NebulaOS uses **Vitest** for unit testing and **GitHub Actions** for automated testing on push/PR.
+NebulaOS uses **Playwright** for E2E and **Vitest** for unit tests. CI runs on each push/PR via **GitHub Actions**.
 
-Currently covered:
+**Currently tested**
 
-- ✅ App renders without errors
-- ✅ Snapshot test for `Button`
-- ✅ CI setup for E2E testing
+- ✅ App loads with no console errors and shows hero headline
+- ✅ **Theme toggle** switches classes (`light`/`dark`) and respects stored preference
+- ✅ **A11y scan** (wcag2a/aa) on Home with `@axe-core/playwright`
 
-Coming soon:
+**Coming soon**
 
-- 🧪 Interaction tests for console and modal
-- 🌙 Theme persistence tests
-- 🔍 Accessibility validation for navigation
+- 🖱️ Console interactions + modal flows
+- 🧭 Header nav and anchor routes
+- ♿ Additional ARIA checks and keyboard traps
 
-🧪 [View CI status →](https://github.com/quim-romero/nebulaos/actions)
+🧪 **CI status:** https://github.com/quim-romero/nebulaos/actions
+
+---
+
+## ♿ Accessibility & ⚡ Performance
+
+**Accessibility**
+
+- Unit a11y with **vitest-axe**; browser a11y with **@axe-core/playwright** in CI.  
+  _Goal: 0 violations on core flows._
+
+**Performance**
+
+- Lighthouse (LHCI) asserts budgets on the built site.  
+  _Goal: keep FCP/LCP in the green on the homepage._
+
+![Lighthouse](./public/lighthouse.png)
+
+**Run locally (essentials)**
+
+```bash
+# Dev
+npm run dev
+
+# Unit tests
+npm run test:unit
+
+# Unit a11y subset
+npm run a11y:unit
+
+# E2E (headless)
+npm run test:e2e
+
+# Quick smoke / a11y E2E
+npm run smoke
+npm run a11y:e2e
+
+# Build + Lighthouse CI (filesystem reports)
+npm run build && npm run lhci:fs
+```
 
 ---
 
@@ -93,20 +135,19 @@ Coming soon:
 
 ## 🧩 Notes
 
-- ✨ 100% handcrafted UI — no templates used
-- 🔍 Inspired by emotional, clear, and modern design
-- 🧪 Perfect to showcase advanced frontend interaction skills
+- 🧠 100% hand-coded — no templates
+- 🧼 Prioritizes clarity, motion feel, and accessibility
+- 🛠 Built as a **developer portfolio project**, not a production SaaS
 
 ---
 
 ## 📬 Contact
 
-Looking for a frontend developer with visual sensitivity and technical precision?
+If you’re looking for a frontend developer who builds **clean, animated, accessible** interfaces:
 
 - 📧 quim@quimromero.com
-- 🌐 [https://www.quimromero.com/](https://www.quimromero.com/)
+- 🌐 https://www.quimromero.com/
 
 ---
 
-> _NebulaOS transforms the idea of productivity into a living experience —  
-> where design, interaction, and code flow together._
+> _NebulaOS turns productivity into a living experience — where design, interaction, and code flow together._
